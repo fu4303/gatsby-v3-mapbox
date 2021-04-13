@@ -17,9 +17,6 @@ export const Map = () => {
       console.error(`No 'MAPBOX_TOKEN' provided`)
       return null
     }
-    console.log(
-      `using token of ${MAPBOX_TOKEN} or maybe use this ${process.env.GATSBY_MAPBOX_API_KEY}`
-    )
 
     if (!isBrowser) {
       console.error('No window here')
