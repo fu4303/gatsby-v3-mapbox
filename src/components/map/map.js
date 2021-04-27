@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { isBrowser } from 'is-in-browser'
-import mapboxGl from 'mapbox-gl'
+import mapboxgl from '!mapbox-gl/dist/mapbox-gl.js'
 
 const MAPBOX_TOKEN = process.env.GATSBY_MAPBOX_API_KEY
 const MAPBOX_MAP_STYLE =
@@ -23,7 +23,7 @@ export const Map = () => {
       return null
     }
 
-    const map = new mapboxGl.Map({
+    const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       accessToken: MAPBOX_TOKEN,
       style: MAPBOX_MAP_STYLE,
@@ -33,7 +33,7 @@ export const Map = () => {
       interactive: true,
       hash: true,
     })
-    map.addControl(new mapboxGl.NavigationControl(), 'top-right')
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right')
 
     setMap(map)
 
